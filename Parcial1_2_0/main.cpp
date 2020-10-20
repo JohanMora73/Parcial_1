@@ -21,7 +21,7 @@ int main()
 
     xd0=d;
     yd0=Hd;
-    cout<<"digite una 4 opciones disponibles: "<<endl;cin>>caso;
+    cout<<"digite una de las 4 opciones disponibles: "<<endl;cin>>caso;
     switch(caso){
 
     case 1:
@@ -37,7 +37,7 @@ int main()
                 if(sqrt(pow((x-d),2)+pow((y-Hd),2))<=0.05*d){
                     //cout<<x<<" "<<y<<" vox "<<vox<< " voy"<<voy<<" vo"<<vo<<endl;
                     cout<<"diatancia entre puntos"<<sqrt(pow((x-d),2)+pow((y-Hd),2))<<endl;
-                    cout<<"angulo de riezgo "<<ao*180/pi<<" y velocidad: "<<vo<<endl;
+                    cout<<"angulo de riezgo "<<ao*180/pi<<" y velocidad: "<<vo<<"Tiempo de vuelo: "<<t<<endl;
                     cont++;
                     resp=true;
                     break;
@@ -54,8 +54,8 @@ int main()
         while(cont<3){
             ao = rand () % (90-0+1) + 0;   // Este está entre M y N
             ao=ao*pi/180;
-            for(int vo = 0;vo>-100;vo-=2){
-                vox=vo*cos(ao);
+            for(int vo = 0;vo<100;vo+=2){
+                vox=-vo*cos(ao);
                 voy=vo*sin(ao);
                 for(int t =0;t<20;t+=1){
                     x=xd0+vox*t;
@@ -63,7 +63,7 @@ int main()
                     if(sqrt(pow((x-0),2)+pow((y-Ho),2))<=0.025*d){
                         //cout<<x<<" "<<y<<" vox "<<vox<< " voy"<<voy<<" vo"<<vo<<endl;
                         cout<<"diatancia entre puntos"<<sqrt(pow((x-0),2)+pow((y-Ho),2))<<endl;
-                        cout<<"angulo de riezgo "<<ao*180/pi<<" y velocidad: "<<vo<<endl;
+                        cout<<"angulo de riezgo "<<ao*180/pi<<" y velocidad: "<<vo<<"Tiempo de vuelo: "<<t<<endl;
                         cont++;
                         resp=true;
                         break;
